@@ -1,36 +1,89 @@
-/* Gabriel Venegas | Folklórico Mail Club */
-/* Save as style.css and link from HTML with:
-   <link rel="stylesheet" href="style.css"> */
 
+/* =========================================
+   GABRIEL VENEGAS
+   FOLKLÓRICO MAIL CLUB
+   RESPONSIVE WEBSITE STYLESHEET
+   ========================================= */
+
+/* WEBSITE COLORS */
+:root {
+  --cream: #F7EEDC;
+  --sand: #E9D5B5;
+  --brown: #69432E;
+  --light-brown: #B77A53;
+  --white: #FFFFFF;
+  --black: #171717;
+  --gray: #EAEAEA;
+  --text-gray: #76695F;
+
+  --content-width: 1150px;
+  --section-space: 80px;
+}
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: Georgia, serif;
-  background-color: #FFFCF6;
-  color: #69432E;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 220px;
 }
 
-/* Top header row: logo on left, title centered */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--white);
+  color: var(--brown);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   STICKY HEADER
+   ========================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--cream);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* FIRST HEADER ROW */
 .header-top {
   height: 160px;
-  background-color: #F7EEDC;
+  background: var(--cream);
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   padding: 20px 40px;
 }
 
+/* LOGO */
 .logo {
   position: absolute;
   left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .logo img {
@@ -39,28 +92,32 @@ body {
   object-fit: contain;
 }
 
+/* WEBSITE TITLE */
 .header-title {
-  width: 100%;
   text-align: center;
+  max-width: 70%;
 }
 
 .header-title h1 {
   font-size: 32px;
-  letter-spacing: 4px;
   font-weight: normal;
+  letter-spacing: 4px;
+  line-height: 1.3;
 }
 
 .header-title p {
   font-size: 14px;
-  margin-top: 10px;
   font-style: italic;
   letter-spacing: 1px;
+  margin-top: 10px;
 }
 
-/* Navigation row: one quarter of the 160px header */
+/* SECOND HEADER ROW */
+/* 40px = 1/4 of 160px */
+
 .navigation {
   height: 40px;
-  background-color: #E9D5B5;
+  background: var(--sand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,25 +127,264 @@ body {
 }
 
 .navigation a {
-  color: #69432E;
-  text-decoration: none;
+  color: var(--brown);
   font-size: 13px;
   letter-spacing: 2px;
-  transition: color 0.3s;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
-.navigation a:hover,
-.navigation a:focus-visible {
-  color: #B77A53;
+.navigation a:hover {
+  color: var(--light-brown);
   text-decoration: underline;
 }
 
-main { min-height: 65vh; }
-main section { scroll-margin-top: 20px; }
+.navigation a:focus-visible,
+.social-links a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--light-brown);
+  outline-offset: 4px;
+}
 
-/* Footer and social accounts */
+/* =========================================
+   HOMEPAGE GENERAL LAYOUT
+   ========================================= */
+
+main {
+  flex: 1;
+  width: 100%;
+  background: var(--white);
+}
+
+main section {
+  scroll-margin-top: 220px;
+}
+
+.home-container,
+.homepage,
+.home-content {
+  width: min(100% - 48px, var(--content-width));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-container {
+  padding-top: 55px;
+  padding-bottom: 80px;
+}
+
+.home-section {
+  margin-bottom: var(--section-space);
+}
+
+/* =========================================
+   IMAGE FRAMES
+   ========================================= */
+
+.image-frame,
+.photo-frame,
+.video-frame {
+  background: var(--black);
+  border: 8px solid var(--black);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image-frame img,
+.photo-frame img,
+.video-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* PLACEHOLDERS */
+.image-placeholder,
+.video-placeholder {
+  background: var(--gray);
+  color: #555555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 12px;
+}
+
+/* =========================================
+   FIRST ROW - LARGE HORIZONTAL IMAGE
+   ========================================= */
+
+.hero,
+.hero-section,
+.featured-image {
+  width: 100%;
+  margin-bottom: var(--section-space);
+}
+
+.hero .image-frame,
+.hero-section .image-frame,
+.featured-image .image-frame {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  max-height: 540px;
+}
+
+/* =========================================
+   SECOND ROW - INTRO TEXT AND VLOG
+   ========================================= */
+
+.intro-section,
+.intro-row,
+.vlog-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 55px;
+  margin-bottom: var(--section-space);
+}
+
+.intro-text,
+.vlog-text {
+  min-width: 0;
+}
+
+.intro-text h2,
+.vlog-text h2 {
+  font-size: clamp(23px, 3vw, 36px);
+  font-weight: normal;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.intro-text p,
+.vlog-text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text-gray);
+}
+
+.intro-section .video-frame,
+.intro-row .video-frame,
+.vlog-section .video-frame {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 3 / 4;
+  justify-self: center;
+}
+
+/* =========================================
+   THIRD ROW - THREE IMAGE COLUMNS
+   ========================================= */
+
+.cards-section,
+.gallery-preview,
+.features-section {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.cards-grid,
+.three-columns,
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.card,
+.feature-card,
+.gallery-card {
+  min-width: 0;
+  text-align: center;
+}
+
+.card .image-frame,
+.feature-card .image-frame,
+.gallery-card .image-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 22px;
+}
+
+.card h3,
+.feature-card h3,
+.gallery-card h3 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+.card p,
+.feature-card p,
+.gallery-card p {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.7;
+  max-width: 290px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   CLICK NOW BUTTON
+   ========================================= */
+
+.button-row,
+.button-container,
+.cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+  margin-bottom: 70px;
+}
+
+.click-button,
+.cta-button,
+.button-row a,
+.button-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 46px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  background: var(--brown);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.click-button:hover,
+.cta-button:hover,
+.button-row a:hover,
+.button-container a:hover {
+  background: var(--light-brown);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
 footer {
-  background-color: #69432E;
+  width: 100%;
+  background: var(--brown);
   color: #FFF7E8;
   padding: 35px 20px 20px;
   text-align: center;
@@ -98,47 +394,359 @@ footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  gap: 25px;
   max-width: 800px;
   margin: 0 auto 30px;
 }
 
 .social-links a {
-  color: #FFF7E8;
-  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #FFF7E8;
   font-size: 15px;
-  transition: color 0.3s;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.social-links i { font-size: 25px; }
-.social-links a:hover,
-.social-links a:focus-visible { color: #E9D5B5; }
+.social-links i {
+  font-size: 25px;
+}
+
+.social-links a:hover {
+  color: var(--sand);
+}
 
 .copyright {
   font-size: 12px;
   letter-spacing: 1px;
+  line-height: 1.7;
   border-top: 1px solid #94745D;
   padding-top: 20px;
 }
 
-/* Adapt layout for phones */
-@media (max-width: 700px) {
-  .header-top { height: 160px; padding: 15px; }
-  .logo { left: 15px; }
-  .logo img { width: 65px; height: 65px; }
-  .header-title { padding-left: 65px; }
-  .header-title h1 { font-size: 18px; letter-spacing: 2px; }
-  .header-title p { font-size: 11px; }
+/* =========================================
+   TABLETS AND SMALL LAPTOPS
+   601px - 1024px
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+  :root {
+    --section-space: 60px;
+  }
+
+  .header-top {
+    height: 140px;
+    padding: 20px 25px;
+  }
+
+  .logo {
+    left: 25px;
+  }
+
+  .logo img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .header-title h1 {
+    font-size: 26px;
+    letter-spacing: 3px;
+  }
+
+  .navigation {
+    height: 35px;
+    gap: 25px;
+  }
+
+  .navigation a {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .home-container {
+    padding-top: 40px;
+  }
+
+  .intro-section,
+  .intro-row,
+  .vlog-section {
+    gap: 35px;
+  }
+
+  .cards-grid,
+  .three-columns,
+  .feature-grid {
+    gap: 22px;
+  }
+
+  .card h3,
+  .feature-card h3,
+  .gallery-card h3 {
+    font-size: 18px;
+  }
+
+  html {
+    scroll-padding-top: 195px;
+  }
+
+  main section {
+    scroll-margin-top: 195px;
+  }
+}
+
+/* =========================================
+   PHONES
+   600px AND BELOW
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  :root {
+    --section-space: 38px;
+  }
+
+  .header-top {
+    height: 112px;
+    padding: 12px;
+  }
+
+  .logo {
+    left: 12px;
+  }
+
+  .logo img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .header-title {
+    max-width: none;
+    width: 100%;
+    padding-left: 65px;
+    padding-right: 5px;
+  }
+
+  .header-title h1 {
+    font-size: clamp(15px, 4vw, 20px);
+    letter-spacing: 1.5px;
+  }
+
+  .header-title p {
+    font-size: 10px;
+    margin-top: 6px;
+    letter-spacing: 0;
+  }
+
   .navigation {
     height: auto;
     min-height: 40px;
     flex-wrap: wrap;
-    gap: 12px 20px;
-    padding: 12px;
+    gap: 10px 18px;
+    padding: 10px 8px;
   }
-  .navigation a { font-size: 11px; }
-  .social-links { flex-wrap: wrap; gap: 20px; }
-  .social-links a { font-size: 12px; }
+
+  .navigation a {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .home-container,
+  .homepage,
+  .home-content {
+    width: calc(100% - 28px);
+  }
+
+  .home-container {
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .image-frame,
+  .photo-frame,
+  .video-frame {
+    border-width: 5px;
+    border-radius: 14px;
+  }
+
+  .image-placeholder,
+  .video-placeholder {
+    font-size: 12px;
+    border-radius: 9px;
+  }
+
+  .hero .image-frame,
+  .hero-section .image-frame,
+  .featured-image .image-frame {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Keep text beside the vlog */
+  .intro-section,
+  .intro-row,
+  .vlog-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: 16px;
+  }
+
+  .intro-text h2,
+  .vlog-text h2 {
+    font-size: clamp(16px, 4vw, 23px);
+    margin-bottom: 10px;
+  }
+
+  .intro-text p,
+  .vlog-text p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .intro-section .video-frame,
+  .intro-row .video-frame,
+  .vlog-section .video-frame {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Keep all 3 cards in one row */
+  .cards-grid,
+  .three-columns,
+  .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .card .image-frame,
+  .feature-card .image-frame,
+  .gallery-card .image-frame {
+    margin-bottom: 12px;
+  }
+
+  .card h3,
+  .feature-card h3,
+  .gallery-card h3 {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 7px;
+  }
+
+  .card p,
+  .feature-card p,
+  .gallery-card p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .button-row,
+  .button-container,
+  .cta-section {
+    margin-top: 32px;
+    margin-bottom: 45px;
+  }
+
+  .click-button,
+  .cta-button,
+  .button-row a,
+  .button-container a {
+    min-width: 145px;
+    min-height: 42px;
+    font-size: 11px;
+  }
+
+  footer {
+    padding: 28px 12px 18px;
+  }
+
+  .social-links {
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .social-links a {
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .social-links i {
+    font-size: 20px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+
+  html {
+    scroll-padding-top: 190px;
+  }
+
+  main section {
+    scroll-margin-top: 190px;
+  }
 }
+
+/* =========================================
+   VERY SMALL PHONES
+   360px AND BELOW
+   ========================================= */
+
+@media (max-width: 360px) {
+
+  .header-title h1 {
+    font-size: 14px;
+  }
+
+  .navigation {
+    gap: 8px 12px;
+  }
+
+  .navigation a {
+    font-size: 9px;
+  }
+
+  /* Stack intro only on very small screens */
+  .intro-section,
+  .intro-row,
+  .vlog-section {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .intro-section .video-frame,
+  .intro-row .video-frame,
+  .vlog-section .video-frame {
+    max-width: 230px;
+  }
+
+  .cards-grid,
+  .three-columns,
+  .feature-grid {
+    gap: 7px;
+  }
+
+  .card h3,
+  .feature-card h3,
+  .gallery-card h3 {
+    font-size: 11px;
+  }
+
+  .card p,
+  .feature-card p,
+  .gallery-card p {
+    font-size: 9px;
+  }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
