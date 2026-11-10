@@ -62,9 +62,11 @@
       width: 100%;
     }
 
-    .hero-frame .media-placeholder {
+    .hero-frame .hero-image {
+      display: block;
+      width: 100%;
       aspect-ratio: 16 / 7;
-      font-size: 26px;
+      object-fit: cover;
     }
 
     /* SECOND ROW - INTRO AND VLOG */
@@ -222,7 +224,7 @@
         padding-block: 38px;
       }
 
-      .hero-frame .media-placeholder {
+      .hero-frame .hero-image {
         aspect-ratio: 16 / 9;
       }
 
@@ -317,10 +319,7 @@
     <section class="home-section home-container" aria-label="Featured image">
 
       <div class="media-frame hero-frame">
-         <img src="Home1.jpeg" alt="Folklórico Mail Club featured image" class="hero-image">
-        <div class="media-placeholder">
-          IMAGE 1
-        </div>
+        <img src="Home1.jpeg" alt="Folklórico Mail Club featured image" class="hero-image">
       </div>
 
     </section>
