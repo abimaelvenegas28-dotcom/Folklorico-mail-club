@@ -1,0 +1,144 @@
+/* Gabriel Venegas | Folklórico Mail Club */
+/* Save as style.css and link from HTML with:
+   <link rel="stylesheet" href="style.css"> */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, serif;
+  background-color: #FFFCF6;
+  color: #69432E;
+}
+
+/* Top header row: logo on left, title centered */
+.header-top {
+  height: 160px;
+  background-color: #F7EEDC;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 20px 40px;
+}
+
+.logo {
+  position: absolute;
+  left: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+.header-title {
+  width: 100%;
+  text-align: center;
+}
+
+.header-title h1 {
+  font-size: 32px;
+  letter-spacing: 4px;
+  font-weight: normal;
+}
+
+.header-title p {
+  font-size: 14px;
+  margin-top: 10px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Navigation row: one quarter of the 160px header */
+.navigation {
+  height: 40px;
+  background-color: #E9D5B5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  border-top: 1px solid #C8A989;
+  border-bottom: 1px solid #C8A989;
+}
+
+.navigation a {
+  color: #69432E;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible {
+  color: #B77A53;
+  text-decoration: underline;
+}
+
+main { min-height: 65vh; }
+main section { scroll-margin-top: 20px; }
+
+/* Footer and social accounts */
+footer {
+  background-color: #69432E;
+  color: #FFF7E8;
+  padding: 35px 20px 20px;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.social-links a {
+  color: #FFF7E8;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.social-links i { font-size: 25px; }
+.social-links a:hover,
+.social-links a:focus-visible { color: #E9D5B5; }
+
+.copyright {
+  font-size: 12px;
+  letter-spacing: 1px;
+  border-top: 1px solid #94745D;
+  padding-top: 20px;
+}
+
+/* Adapt layout for phones */
+@media (max-width: 700px) {
+  .header-top { height: 160px; padding: 15px; }
+  .logo { left: 15px; }
+  .logo img { width: 65px; height: 65px; }
+  .header-title { padding-left: 65px; }
+  .header-title h1 { font-size: 18px; letter-spacing: 2px; }
+  .header-title p { font-size: 11px; }
+  .navigation {
+    height: auto;
+    min-height: 40px;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding: 12px;
+  }
+  .navigation a { font-size: 11px; }
+  .social-links { flex-wrap: wrap; gap: 20px; }
+  .social-links a { font-size: 12px; }
+}
