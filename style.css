@@ -1,11 +1,12 @@
 
-/* =========================================
+/* ========================================
    GABRIEL VENEGAS
    FOLKLÓRICO MAIL CLUB
-   RESPONSIVE WEBSITE STYLESHEET
-   ========================================= */
+   COMPLETE RESPONSIVE CSS
+   ======================================== */
 
-/* WEBSITE COLORS */
+/* COLORS AND SETTINGS */
+
 :root {
   --cream: #F7EEDC;
   --sand: #E9D5B5;
@@ -18,9 +19,11 @@
 
   --content-width: 1150px;
   --section-space: 80px;
+  --footer-height: 112px;
 }
 
-/* RESET */
+/* GENERAL RESET */
+
 * {
   margin: 0;
   padding: 0;
@@ -34,11 +37,12 @@ html {
 
 body {
   font-family: Georgia, "Times New Roman", serif;
-  background: var(--white);
+  background-color: var(--white);
   color: var(--brown);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-bottom: var(--footer-height);
   overflow-x: hidden;
 }
 
@@ -51,23 +55,24 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* =========================================
-   STICKY HEADER
-   ========================================= */
+/* ========================================
+   STICKY NAVIGATION HEADER
+   ======================================== */
 
 header {
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: var(--cream);
+  background-color: var(--cream);
   box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 
-/* FIRST HEADER ROW */
+/* TOP ROW */
+
 .header-top {
   height: 160px;
-  background: var(--cream);
+  background-color: var(--cream);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,7 +80,8 @@ header {
   padding: 20px 40px;
 }
 
-/* LOGO */
+/* LOGO ON LEFT */
+
 .logo {
   position: absolute;
   left: 40px;
@@ -92,7 +98,8 @@ header {
   object-fit: contain;
 }
 
-/* WEBSITE TITLE */
+/* CENTERED TITLE */
+
 .header-title {
   text-align: center;
   max-width: 70%;
@@ -112,12 +119,11 @@ header {
   margin-top: 10px;
 }
 
-/* SECOND HEADER ROW */
-/* 40px = 1/4 of 160px */
+/* SECOND NAVIGATION ROW */
 
 .navigation {
   height: 40px;
-  background: var(--sand);
+  background-color: var(--sand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,21 +146,14 @@ header {
   text-decoration: underline;
 }
 
-.navigation a:focus-visible,
-.social-links a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--light-brown);
-  outline-offset: 4px;
-}
-
-/* =========================================
-   HOMEPAGE GENERAL LAYOUT
-   ========================================= */
+/* ========================================
+   MAIN HOMEPAGE
+   ======================================== */
 
 main {
   flex: 1;
   width: 100%;
-  background: var(--white);
+  background-color: var(--white);
 }
 
 main section {
@@ -178,14 +177,14 @@ main section {
   margin-bottom: var(--section-space);
 }
 
-/* =========================================
-   IMAGE FRAMES
-   ========================================= */
+/* ========================================
+   BLACK ROUNDED IMAGE FRAMES
+   ======================================== */
 
 .image-frame,
 .photo-frame,
 .video-frame {
-  background: var(--black);
+  background-color: var(--black);
   border: 8px solid var(--black);
   border-radius: 20px;
   overflow: hidden;
@@ -201,10 +200,11 @@ main section {
   border-radius: 12px;
 }
 
-/* PLACEHOLDERS */
+/* IMAGE PLACEHOLDERS */
+
 .image-placeholder,
 .video-placeholder {
-  background: var(--gray);
+  background-color: var(--gray);
   color: #555555;
   display: flex;
   align-items: center;
@@ -217,9 +217,9 @@ main section {
   border-radius: 12px;
 }
 
-/* =========================================
+/* ========================================
    FIRST ROW - LARGE HORIZONTAL IMAGE
-   ========================================= */
+   ======================================== */
 
 .hero,
 .hero-section,
@@ -236,15 +236,17 @@ main section {
   max-height: 540px;
 }
 
-/* =========================================
-   SECOND ROW - INTRO TEXT AND VLOG
-   ========================================= */
+/* ========================================
+   SECOND ROW - INTRO AND VLOG
+   ======================================== */
 
 .intro-section,
 .intro-row,
 .vlog-section {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(0, 0.8fr);
   align-items: center;
   gap: 55px;
   margin-bottom: var(--section-space);
@@ -279,9 +281,9 @@ main section {
   justify-self: center;
 }
 
-/* =========================================
+/* ========================================
    THIRD ROW - THREE IMAGE COLUMNS
-   ========================================= */
+   ======================================== */
 
 .cards-section,
 .gallery-preview,
@@ -294,7 +296,8 @@ main section {
 .three-columns,
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
   gap: 32px;
   align-items: start;
 }
@@ -332,9 +335,9 @@ main section {
   margin: 0 auto;
 }
 
-/* =========================================
+/* ========================================
    CLICK NOW BUTTON
-   ========================================= */
+   ======================================== */
 
 .button-row,
 .button-container,
@@ -358,7 +361,7 @@ main section {
   padding: 12px 30px;
   border-radius: 8px;
   border: none;
-  background: var(--brown);
+  background-color: var(--brown);
   color: var(--white);
   font-family: inherit;
   font-size: 13px;
@@ -374,21 +377,34 @@ main section {
 .cta-button:hover,
 .button-row a:hover,
 .button-container a:hover {
-  background: var(--light-brown);
+  background-color: var(--light-brown);
   transform: translateY(-2px);
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
+/* ========================================
+   FIXED FOOTER
+   ALWAYS VISIBLE
+   ======================================== */
 
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  background: var(--brown);
+  z-index: 1000;
+
+  background-color: var(--brown);
   color: #FFF7E8;
-  padding: 35px 20px 20px;
+
+  min-height: var(--footer-height);
+  padding: 12px 20px 10px;
   text-align: center;
+
+  box-shadow: 0 -3px 12px rgba(0,0,0,0.12);
 }
+
+/* SOCIAL MEDIA */
 
 .social-links {
   display: flex;
@@ -396,7 +412,7 @@ footer {
   align-items: center;
   gap: 25px;
   max-width: 800px;
-  margin: 0 auto 30px;
+  margin: 0 auto 9px;
 }
 
 .social-links a {
@@ -417,18 +433,20 @@ footer {
   color: var(--sand);
 }
 
+/* COPYRIGHT */
+
 .copyright {
   font-size: 12px;
   letter-spacing: 1px;
   line-height: 1.7;
   border-top: 1px solid #94745D;
-  padding-top: 20px;
+  padding-top: 8px;
 }
 
-/* =========================================
+/* ========================================
    TABLETS AND SMALL LAPTOPS
-   601px - 1024px
-   ========================================= */
+   601px TO 1024px
+   ======================================== */
 
 @media (max-width: 1024px) {
 
@@ -496,19 +514,20 @@ footer {
   }
 }
 
-/* =========================================
+/* ========================================
    PHONES
    600px AND BELOW
-   ========================================= */
+   ======================================== */
 
 @media (max-width: 600px) {
 
   :root {
     --section-space: 38px;
+    --footer-height: 80px;
   }
 
   .header-top {
-    height: 112px;
+    height: 86px;
     padding: 12px;
   }
 
@@ -517,8 +536,8 @@ footer {
   }
 
   .logo img {
-    width: 58px;
-    height: 58px;
+    width: 46px;
+    height: 46px;
   }
 
   .header-title {
@@ -543,8 +562,8 @@ footer {
     height: auto;
     min-height: 40px;
     flex-wrap: wrap;
-    gap: 10px 18px;
-    padding: 10px 8px;
+    gap: 7px 11px;
+    padding: 7px 5px;
   }
 
   .navigation a {
@@ -582,11 +601,14 @@ footer {
     aspect-ratio: 16 / 9;
   }
 
-  /* Keep text beside the vlog */
+  /* INTRO BESIDE VIDEO */
+
   .intro-section,
   .intro-row,
   .vlog-section {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 0.85fr);
     gap: 16px;
   }
 
@@ -608,11 +630,13 @@ footer {
     aspect-ratio: 3 / 4;
   }
 
-  /* Keep all 3 cards in one row */
+  /* THREE CARDS STAY SIDE BY SIDE */
+
   .cards-grid,
   .three-columns,
   .feature-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
     gap: 10px;
   }
 
@@ -637,6 +661,8 @@ footer {
     line-height: 1.5;
   }
 
+  /* BUTTON */
+
   .button-row,
   .button-container,
   .cta-section {
@@ -653,18 +679,22 @@ footer {
     font-size: 11px;
   }
 
+  /* COMPACT FIXED FOOTER */
+
   footer {
-    padding: 28px 12px 18px;
+    padding: 9px 10px 7px;
   }
 
   .social-links {
-    gap: 10px;
-    margin-bottom: 25px;
+    flex-wrap: nowrap;
+    gap: 5px;
+    margin-bottom: 7px;
   }
 
   .social-links a {
-    font-size: 11px;
-    gap: 5px;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 10px;
   }
 
   .social-links i {
@@ -672,22 +702,23 @@ footer {
   }
 
   .copyright {
-    font-size: 10px;
+    font-size: 9px;
+    padding-top: 6px;
   }
 
   html {
-    scroll-padding-top: 190px;
+    scroll-padding-top: 150px;
   }
 
   main section {
-    scroll-margin-top: 190px;
+    scroll-margin-top: 150px;
   }
 }
 
-/* =========================================
+/* ========================================
    VERY SMALL PHONES
    360px AND BELOW
-   ========================================= */
+   ======================================== */
 
 @media (max-width: 360px) {
 
@@ -703,7 +734,6 @@ footer {
     font-size: 9px;
   }
 
-  /* Stack intro only on very small screens */
   .intro-section,
   .intro-row,
   .vlog-section {
@@ -736,8 +766,45 @@ footer {
   }
 }
 
-/* ACCESSIBILITY */
+/* ========================================
+   SHORT LANDSCAPE SCREENS
+   ======================================== */
+
+@media (max-height: 550px)
+       and (max-width: 900px) {
+
+  :root {
+    --footer-height: 58px;
+  }
+
+  .header-top {
+    height: 65px;
+  }
+
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  footer {
+    padding: 5px 10px;
+  }
+
+  footer .copyright {
+    display: none;
+  }
+
+  .social-links {
+    margin-bottom: 0;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -749,4 +816,3 @@ footer {
     animation-duration: 0.01ms !important;
   }
 }
-
