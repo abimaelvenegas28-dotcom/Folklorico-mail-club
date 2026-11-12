@@ -1,80 +1,1054 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Explore Folklórico Mail Club monthly and yearly subscription editions.">
+
 <title>Services | Gabriel Venegas Folklórico Mail Club</title>
+
+<!-- SHARED WEBSITE CSS -->
 <link rel="stylesheet" href="style.css">
+
+<!-- SOCIAL MEDIA ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
-/* Only the Services page: the shared header and footer come from style.css */
-.services-page {background:#fff;color:#69432e;}
-.services-heading {padding:clamp(38px,6vw,78px) 20px;text-align:center;}
-.services-heading h2 {font-size:clamp(32px,5vw,56px);font-weight:normal;letter-spacing:.15em;}
-.services-heading p {margin:12px auto 0;max-width:600px;color:#76695f;line-height:1.7;}
-.pods-section {background:#e9d5b5;padding:clamp(42px,6vw,80px) 20px;}
-.pods-wrap {max-width:1100px;margin:auto;}
-.pods-heading {font-size:clamp(22px,3vw,32px);font-weight:normal;text-align:center;margin-bottom:36px;}
-.pods-top {display:flex;justify-content:center;gap:clamp(18px,3vw,40px);margin-bottom:28px;}
-.pods-bottom {display:flex;justify-content:center;gap:clamp(18px,3vw,40px);}
-.subscription-pod {background:#fffaf2;border:2px solid #69432e;border-radius:105px;overflow:hidden;width:min(100%,265px);min-width:0;display:flex;flex-direction:column;text-align:center;box-shadow:0 8px 20px rgba(71,45,27,.1);}
-.pod-photo {height:205px;position:relative;background:#eaeaea;overflow:hidden;border-bottom:2px solid #69432e;}
-.pod-photo img {display:block;width:100%;height:100%;object-fit:cover;}
-.pod-photo .photo-label {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#555;font:13px Arial,sans-serif;letter-spacing:.07em;}
-.pod-photo:has(img) .photo-label {display:none;}
-.saving {position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:max-content;max-width:90%;padding:6px 11px;border-radius:30px;background:rgba(105,67,46,.94);color:#fff;font:600 12px Arial,sans-serif;}
-.pod-info {padding:20px 18px 31px;display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
-.pod-info h3 {font-size:20px;font-weight:normal;line-height:1.35;min-height:54px;display:flex;align-items:center;justify-content:center;}
-.pod-price {font-size:26px;font-weight:bold;line-height:1.2;}
-.pod-price small {display:block;font-size:12px;font-weight:normal;color:#76695f;margin-top:5px;}
-.pod-button,.purchase-button {display:inline-flex;align-items:center;justify-content:center;text-align:center;background:#69432e;color:#fff;text-decoration:none;border:1px solid #69432e;border-radius:9px;padding:13px 19px;font-size:12px;letter-spacing:1.2px;min-height:44px;transition:background .2s,color .2s;}
-.pod-button:hover,.pod-button:focus-visible,.purchase-button:hover,.purchase-button:focus-visible {background:#fff;color:#69432e;}
-.pod-button {margin-top:auto;width:100%;max-width:180px;}
-.details-area {max-width:1060px;margin:0 auto;padding:42px 24px 70px;}
-.detail-row {display:grid;grid-template-columns:minmax(0,310px) minmax(0,1fr);align-items:center;justify-content:center;gap:clamp(28px,6vw,80px);padding:65px 0;border-bottom:1px solid #e9d5b5;scroll-margin-top:160px;}
-.detail-row.reverse {grid-template-columns:minmax(0,1fr) minmax(0,310px);}
-.detail-row.reverse .detail-image {order:2;}
-.detail-row.reverse .detail-copy {order:1;}
-.detail-image {width:100%;max-width:310px;aspect-ratio:3/4;background:#eaeaea;border:8px solid #171717;border-radius:22px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#555;font:14px Arial,sans-serif;}
-.detail-image img {width:100%;height:100%;object-fit:cover;display:block;}
-.detail-copy h2 {font-size:clamp(26px,3vw,36px);font-weight:normal;margin-bottom:14px;}
-.detail-copy .detail-price {font-size:24px;font-weight:bold;margin-bottom:15px;}
-.detail-copy p {font-size:16px;line-height:1.8;color:#76695f;margin-bottom:18px;}
-.detail-copy .purchase-button {margin-top:5px;min-width:175px;}
-@media(max-width:800px){.pods-top,.pods-bottom {gap:14px}.subscription-pod {border-radius:70px}.pod-photo {height:165px}.pod-info {padding:17px 11px 23px}.pod-info h3 {font-size:16px;min-height:44px}.pod-price {font-size:21px}.pod-button {font-size:10px;padding:10px 6px;letter-spacing:.4px}.detail-row,.detail-row.reverse {grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:28px}.detail-row.reverse {grid-template-columns:minmax(0,1fr) minmax(0,230px)}}
-@media(max-width:600px){.pods-top,.pods-bottom {flex-wrap:wrap;gap:18px}.subscription-pod {width:min(100%,220px);border-radius:90px}.pods-bottom .subscription-pod {width:min(100%,220px)}.pod-photo {height:180px}.detail-row,.detail-row.reverse {grid-template-columns:1fr;gap:22px;padding:45px 0;scroll-margin-top:145px}.detail-row.reverse .detail-image,.detail-row.reverse .detail-copy {order:initial}.detail-image {max-width:260px;justify-self:center}.detail-copy {text-align:center}.detail-copy p {font-size:15px}.details-area {padding-inline:20px}}
-@media(max-width:380px){.subscription-pod {width:min(100%,240px)}.services-heading h2 {letter-spacing:.08em}}
-@media(prefers-reduced-motion:reduce){html {scroll-behavior:auto}}
+
+/* ========================================
+   SERVICES PAGE ONLY
+   ======================================== */
+
+.services-page {
+  background: #ffffff;
+  color: #69432e;
+}
+
+/* SERVICES TITLE */
+
+.services-heading {
+  padding: clamp(38px, 6vw, 78px) 20px;
+  text-align: center;
+}
+
+.services-heading h2 {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: normal;
+  letter-spacing: .15em;
+}
+
+.services-heading p {
+  margin: 12px auto 0;
+  max-width: 600px;
+  color: #76695f;
+  line-height: 1.7;
+}
+
+/* ========================================
+   SUBSCRIPTION PODS
+   ======================================== */
+
+.pods-section {
+  background: #e9d5b5;
+  padding: clamp(42px, 6vw, 80px) 20px;
+}
+
+.pods-wrap {
+  max-width: 970px;
+  margin: auto;
+}
+
+.pods-heading {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+/* TWO PODS ON TOP */
+
+.pods-top {
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, 2.5vw, 30px);
+  margin-bottom: 28px;
+}
+
+/* THREE PODS ON BOTTOM */
+
+.pods-bottom {
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, 2.5vw, 30px);
+}
+
+/* ROUNDED POD DESIGN */
+
+.subscription-pod {
+  background: #fffaf2;
+  border: 2px solid #69432e;
+  border-radius: 105px;
+  overflow: hidden;
+
+  width: min(100%, 220px);
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(71,45,27,.1);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+
+  transform-origin: center bottom;
+}
+
+/* HOVER: LIFT AND GROW */
+
+.subscription-pod:hover,
+.subscription-pod:focus-within {
+  transform: translateY(-9px) scale(1.035);
+  box-shadow: 0 18px 30px rgba(71,45,27,.22);
+}
+
+/* POD IMAGE */
+
+.pod-photo {
+  height: 175px;
+  position: relative;
+  background: #eaeaea;
+  overflow: hidden;
+  border-bottom: 2px solid #69432e;
+}
+
+.pod-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* IMAGE PLACEHOLDER */
+
+.photo-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: #555555;
+  font: 13px Arial, sans-serif;
+  letter-spacing: .07em;
+}
+
+.pod-photo:has(img:not([style*="display: none"])) .photo-label {
+  display: none;
+}
+
+/* SAVINGS LABEL */
+
+.saving {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: max-content;
+  max-width: 90%;
+
+  padding: 6px 11px;
+  border-radius: 30px;
+
+  background: rgba(105,67,46,.94);
+  color: #ffffff;
+
+  font: 600 12px Arial, sans-serif;
+}
+
+/* POD TEXT */
+
+.pod-info {
+  padding: 17px 14px 24px;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.pod-info h3 {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.35;
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pod-price {
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.pod-price small {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  color: #76695f;
+  margin-top: 5px;
+}
+
+/* BUTTONS */
+
+.pod-button,
+.purchase-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: #69432e;
+  color: #ffffff;
+  text-decoration: none;
+
+  border: 1px solid #69432e;
+  border-radius: 9px;
+
+  padding: 13px 19px;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  min-height: 44px;
+
+  transition:
+    background .2s,
+    color .2s;
+}
+
+.pod-button:hover,
+.pod-button:focus-visible,
+.purchase-button:hover,
+.purchase-button:focus-visible {
+  background: #ffffff;
+  color: #69432e;
+}
+
+.pod-button {
+  margin-top: auto;
+  width: 100%;
+  max-width: 180px;
+}
+
+/* ========================================
+   FIVE DETAIL SECTIONS
+   ======================================== */
+
+.details-area {
+  width: 100%;
+  padding: 25px 0 60px;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: minmax(0,310px) minmax(0,1fr);
+
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(28px,6vw,80px);
+
+  padding: 65px max(24px, calc((100% - 1060px)/2));
+
+  border-bottom: 1px solid #e9d5b5;
+}
+
+/* LIGHT BROWN BACKGROUND FOR
+   MONTHLY GIRL AND YEARLY BOY & GIRL */
+
+.detail-row:nth-child(2),
+.detail-row:nth-child(4) {
+  background: #e9d5b5;
+}
+
+/* SCROLL TARGET */
+
+.detail-copy h2[id] {
+  scroll-margin-top: 220px;
+}
+
+/* REVERSED ROWS */
+
+.detail-row.reverse {
+  grid-template-columns: minmax(0,1fr) minmax(0,310px);
+}
+
+.detail-row.reverse .detail-image {
+  order: 2;
+}
+
+.detail-row.reverse .detail-copy {
+  order: 1;
+}
+
+/* DETAIL IMAGE */
+
+.detail-image {
+  width: 100%;
+  max-width: 310px;
+  aspect-ratio: 3 / 4;
+
+  background: #eaeaea;
+
+  border: 8px solid #171717;
+  border-radius: 22px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #555555;
+  font: 14px Arial, sans-serif;
+}
+
+.detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-placeholder {
+  font-size: 12px;
+  text-align: center;
+  padding: 12px;
+}
+
+.detail-image:has(img:not([style*="display: none"])) .detail-placeholder {
+  display: none;
+}
+
+/* DETAIL TEXT */
+
+.detail-copy h2 {
+  font-size: clamp(26px,3vw,36px);
+  font-weight: normal;
+  margin-bottom: 14px;
+}
+
+.detail-copy .detail-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.detail-copy p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #76695f;
+  margin-bottom: 18px;
+}
+
+.detail-copy .purchase-button {
+  margin-top: 5px;
+  min-width: 175px;
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+   ======================================== */
+
+@media (max-width: 800px) {
+
+  .pods-top,
+  .pods-bottom {
+    gap: 14px;
+  }
+
+  .subscription-pod {
+    border-radius: 70px;
+  }
+
+  .pod-photo {
+    height: 155px;
+  }
+
+  .pod-info {
+    padding: 17px 11px 23px;
+  }
+
+  .pod-info h3 {
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  .pod-price {
+    font-size: 21px;
+  }
+
+  .pod-button {
+    font-size: 10px;
+    padding: 10px 6px;
+    letter-spacing: .4px;
+  }
+
+  .detail-row,
+  .detail-row.reverse {
+    grid-template-columns: minmax(0,230px) minmax(0,1fr);
+    gap: 28px;
+  }
+
+  .detail-row.reverse {
+    grid-template-columns: minmax(0,1fr) minmax(0,230px);
+  }
+}
+
+/* ========================================
+   PHONE RESPONSIVE
+   ======================================== */
+
+@media (max-width: 600px) {
+
+  .pods-top,
+  .pods-bottom {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .subscription-pod,
+  .pods-bottom .subscription-pod {
+    width: min(100%,220px);
+    border-radius: 90px;
+  }
+
+  .pod-photo {
+    height: 165px;
+  }
+
+  .detail-row,
+  .detail-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 45px 20px;
+  }
+
+  .detail-row.reverse .detail-image,
+  .detail-row.reverse .detail-copy {
+    order: initial;
+  }
+
+  .detail-image {
+    max-width: 260px;
+    justify-self: center;
+  }
+
+  .detail-copy {
+    text-align: center;
+  }
+
+  .detail-copy p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .subscription-pod {
+    width: min(100%,240px);
+  }
+
+  .services-heading h2 {
+    letter-spacing: .08em;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .subscription-pod {
+    transition: none;
+  }
+
+  .subscription-pod:hover,
+  .subscription-pod:focus-within {
+    transform: none;
+  }
+}
+
 </style>
 </head>
+
 <body>
+
+<!-- ========================================
+     SHARED NAVIGATION
+     ======================================== -->
+
 <header>
-  <div class="header-top"><a href="index.html" class="logo" aria-label="Home"><img src="logo.png" alt="Gabriel Venegas logo"></a><div class="header-title"><h1>FOLKLÓRICO MAIL</h1><p>Heritage delivered with love</p></div></div>
-  <nav class="navigation" aria-label="Main navigation"><a href="index.html">HOME</a><a href="about-gallery.html">ABOUT ME/GALLERY</a><a href="services.html" aria-current="page">SERVICES</a><a href="contact.html">CONTACT INFO</a></nav>
-</header>
-<main class="services-page">
-  <section class="services-heading"><h2>SERVICES</h2><p>Choose how you'd like to experience the stories, photographs, and traditions of Folklórico Mail Club.</p></section>
-  <section class="pods-section" aria-labelledby="plans-title"><div class="pods-wrap"><h2 class="pods-heading" id="plans-title">Explore Our Editions</h2>
-    <div class="pods-top">
-      <article class="subscription-pod"><div class="pod-photo"><img src="Service1.jpg" alt="Monthly Boy edition preview" onerror="this.style.display='none'"><span class="photo-label">SERVICE IMAGE 1</span></div><div class="pod-info"><h3>Monthly Boy</h3><div class="pod-price">$16.00<small>per month</small></div><a class="pod-button" href="#monthly-boy">MORE DETAILS</a></div></article>
-      <article class="subscription-pod"><div class="pod-photo"><img src="Service2.jpg" alt="Monthly Girl edition preview" onerror="this.style.display='none'"><span class="photo-label">SERVICE IMAGE 2</span></div><div class="pod-info"><h3>Monthly Girl</h3><div class="pod-price">$16.00<small>per month</small></div><a class="pod-button" href="#monthly-girl">MORE DETAILS</a></div></article>
+
+  <div class="header-top">
+
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="logo.png" alt="Gabriel Venegas logo">
+    </a>
+
+    <div class="header-title">
+      <h1>FOLKLÓRICO MAIL</h1>
+      <p>Heritage delivered with love</p>
     </div>
-    <div class="pods-bottom">
-      <article class="subscription-pod"><div class="pod-photo"><img src="Service3.jpg" alt="Yearly Boy edition preview" onerror="this.style.display='none'"><span class="photo-label">SERVICE IMAGE 3</span><span class="saving">SAVE $27.01</span></div><div class="pod-info"><h3>Yearly Boy</h3><div class="pod-price">$164.99<small>per year</small></div><a class="pod-button" href="#yearly-boy">MORE DETAILS</a></div></article>
-      <article class="subscription-pod"><div class="pod-photo"><img src="Service4.jpg" alt="Yearly Boy and Girl edition preview" onerror="this.style.display='none'"><span class="photo-label">SERVICE IMAGE 4</span><span class="saving">SAVE $84.01</span></div><div class="pod-info"><h3>Yearly Boy &amp; Girl</h3><div class="pod-price">$299.99<small>per year</small></div><a class="pod-button" href="#yearly-both">MORE DETAILS</a></div></article>
-      <article class="subscription-pod"><div class="pod-photo"><img src="Service5.jpg" alt="Yearly Girl edition preview" onerror="this.style.display='none'"><span class="photo-label">SERVICE IMAGE 5</span><span class="saving">SAVE $27.01</span></div><div class="pod-info"><h3>Yearly Girl</h3><div class="pod-price">$164.99<small>per year</small></div><a class="pod-button" href="#yearly-girl">MORE DETAILS</a></div></article>
-    </div>
-  </div></section>
-  <div class="details-area">
-    <section class="detail-row" id="monthly-boy"><div class="detail-image"><img src="ServiceDetail1.jpg" alt="Monthly Boy edition details" onerror="this.style.display='none'"> </div><div class="detail-copy"><h2>Monthly Boy</h2><div class="detail-price">$16.00 / month</div><p>Receive a monthly letter celebrating the boy edition of my folklórico journey, with photographs, stories, and creative surprises inspired by Mexican traditions.</p><a href="contact.html" class="purchase-button">PURCHASE NOW</a></div></section>
-    <section class="detail-row reverse" id="monthly-girl"><div class="detail-image"><img src="ServiceDetail2.jpg" alt="Monthly Girl edition details" onerror="this.style.display='none'"></div><div class="detail-copy"><h2>Monthly Girl</h2><div class="detail-price">$16.00 / month</div><p>Explore a monthly girl-themed edition featuring folklórico-inspired stories, imagery, and cultural details delivered through the mail.</p><a href="contact.html" class="purchase-button">PURCHASE NOW</a></div></section>
-    <section class="detail-row" id="yearly-boy"><div class="detail-image"><img src="ServiceDetail3.jpg" alt="Yearly Boy edition details" onerror="this.style.display='none'"></div><div class="detail-copy"><h2>Yearly Boy</h2><div class="detail-price">$164.99 / year</div><p>Enjoy twelve monthly Boy editions with one annual subscription. Save $27.01 compared with twelve separate $16 monthly payments.</p><a href="contact.html" class="purchase-button">PURCHASE NOW</a></div></section>
-    <section class="detail-row reverse" id="yearly-both"><div class="detail-image"><img src="ServiceDetail4.jpg" alt="Yearly Boy and Girl edition details" onerror="this.style.display='none'"></div><div class="detail-copy"><h2>Yearly Boy &amp; Girl</h2><div class="detail-price">$299.99 / year</div><p>Enjoy both Boy and Girl editions throughout the year. Save $84.01 compared with purchasing both editions separately each month.</p><a href="contact.html" class="purchase-button">PURCHASE NOW</a></div></section>
-    <section class="detail-row" id="yearly-girl"><div class="detail-image"><img src="ServiceDetail5.jpg" alt="Yearly Girl edition details" onerror="this.style.display='none'"></div><div class="detail-copy"><h2>Yearly Girl</h2><div class="detail-price">$164.99 / year</div><p>Enjoy twelve monthly Girl editions with one annual subscription. Save $27.01 compared with twelve separate $16 monthly payments.</p><a href="contact.html" class="purchase-button">PURCHASE NOW</a></div></section>
+
   </div>
+
+  <nav class="navigation" aria-label="Main navigation">
+    <a href="index.html">HOME</a>
+    <a href="about-gallery.html">ABOUT ME/GALLERY</a>
+    <a href="services.html" aria-current="page">SERVICES</a>
+    <a href="contact.html">CONTACT INFO</a>
+  </nav>
+
+</header>
+
+<!-- ========================================
+     SERVICES PAGE
+     ======================================== -->
+
+<main class="services-page">
+
+  <!-- ROW 1: SERVICES TITLE -->
+
+  <section class="services-heading">
+
+    <h2>SERVICES</h2>
+
+    <p>
+      Choose how you'd like to experience the stories,
+      photographs, and traditions of Folklórico Mail Club.
+    </p>
+
+  </section>
+
+  <!-- ROW 2: SUBSCRIPTION PODS -->
+
+  <section class="pods-section" aria-labelledby="plans-title">
+
+    <div class="pods-wrap">
+
+      <h2 class="pods-heading" id="plans-title">
+        Explore Our Editions
+      </h2>
+
+      <!-- TOP TWO PODS -->
+
+      <div class="pods-top">
+
+        <!-- POD 1: MONTHLY BOY -->
+
+        <article class="subscription-pod">
+
+          <div class="pod-photo">
+
+            <img
+              src="Service1.jpg"
+              alt="Monthly Boy edition preview"
+              onerror="this.style.display='none'"
+            >
+
+            <span class="photo-label">
+              SERVICE 1 IMAGE
+            </span>
+
+          </div>
+
+          <div class="pod-info">
+
+            <h3>Monthly Boy</h3>
+
+            <div class="pod-price">
+              $16.00
+              <small>per month</small>
+            </div>
+
+            <a class="pod-button" href="#monthly-boy">
+              MORE DETAILS
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- POD 2: MONTHLY GIRL -->
+
+        <article class="subscription-pod">
+
+          <div class="pod-photo">
+
+            <img
+              src="Service2.jpg"
+              alt="Monthly Girl edition preview"
+              onerror="this.style.display='none'"
+            >
+
+            <span class="photo-label">
+              SERVICE 2 IMAGE
+            </span>
+
+          </div>
+
+          <div class="pod-info">
+
+            <h3>Monthly Girl</h3>
+
+            <div class="pod-price">
+              $16.00
+              <small>per month</small>
+            </div>
+
+            <a class="pod-button" href="#monthly-girl">
+              MORE DETAILS
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <!-- BOTTOM THREE PODS -->
+
+      <div class="pods-bottom">
+
+        <!-- POD 3: YEARLY BOY -->
+
+        <article class="subscription-pod">
+
+          <div class="pod-photo">
+
+            <img
+              src="Service3.jpg"
+              alt="Yearly Boy edition preview"
+              onerror="this.style.display='none'"
+            >
+
+            <span class="photo-label">
+              SERVICE 3 IMAGE
+            </span>
+
+            <span class="saving">
+              SAVE $27.01
+            </span>
+
+          </div>
+
+          <div class="pod-info">
+
+            <h3>Yearly Boy</h3>
+
+            <div class="pod-price">
+              $164.99
+              <small>per year</small>
+            </div>
+
+            <a class="pod-button" href="#yearly-boy">
+              MORE DETAILS
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- POD 4: YEARLY BOY AND GIRL -->
+
+        <article class="subscription-pod">
+
+          <div class="pod-photo">
+
+            <img
+              src="Service4.jpg"
+              alt="Yearly Boy and Girl edition preview"
+              onerror="this.style.display='none'"
+            >
+
+            <span class="photo-label">
+              SERVICE 4 IMAGE
+            </span>
+
+            <span class="saving">
+              SAVE $84.01
+            </span>
+
+          </div>
+
+          <div class="pod-info">
+
+            <h3>Yearly Boy &amp; Girl</h3>
+
+            <div class="pod-price">
+              $299.99
+              <small>per year</small>
+            </div>
+
+            <a class="pod-button" href="#yearly-both">
+              MORE DETAILS
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- POD 5: YEARLY GIRL -->
+
+        <article class="subscription-pod">
+
+          <div class="pod-photo">
+
+            <img
+              src="Service5.jpg"
+              alt="Yearly Girl edition preview"
+              onerror="this.style.display='none'"
+            >
+
+            <span class="photo-label">
+              SERVICE 5 IMAGE
+            </span>
+
+            <span class="saving">
+              SAVE $27.01
+            </span>
+
+          </div>
+
+          <div class="pod-info">
+
+            <h3>Yearly Girl</h3>
+
+            <div class="pod-price">
+              $164.99
+              <small>per year</small>
+            </div>
+
+            <a class="pod-button" href="#yearly-girl">
+              MORE DETAILS
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================
+       DETAIL SECTIONS
+       ======================================== -->
+
+  <div class="details-area">
+
+    <!-- ROW 3: MONTHLY BOY -->
+
+    <section class="detail-row">
+
+      <div class="detail-image">
+
+        <img
+          src="Service1Detail.jpg"
+          alt="Monthly Boy edition details"
+          onerror="this.style.display='none'"
+        >
+
+        <span class="detail-placeholder">
+          SERVICE 1 DETAIL IMAGE
+        </span>
+
+      </div>
+
+      <div class="detail-copy">
+
+        <h2 id="monthly-boy">Monthly Boy</h2>
+
+        <div class="detail-price">
+          $16.00 / month
+        </div>
+
+        <p>
+          Receive a monthly letter celebrating the boy
+          edition of my folklórico journey, with photographs,
+          stories, and creative surprises inspired by
+          Mexican traditions.
+        </p>
+
+        <a href="contact.html" class="purchase-button">
+          PURCHASE NOW
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ROW 4: MONTHLY GIRL -->
+
+    <section class="detail-row reverse">
+
+      <div class="detail-image">
+
+        <img
+          src="Service2Detail.jpg"
+          alt="Monthly Girl edition details"
+          onerror="this.style.display='none'"
+        >
+
+        <span class="detail-placeholder">
+          SERVICE 2 DETAIL IMAGE
+        </span>
+
+      </div>
+
+      <div class="detail-copy">
+
+        <h2 id="monthly-girl">Monthly Girl</h2>
+
+        <div class="detail-price">
+          $16.00 / month
+        </div>
+
+        <p>
+          Explore a monthly girl-themed edition featuring
+          folklórico-inspired stories, imagery, and cultural
+          details delivered through the mail.
+        </p>
+
+        <a href="contact.html" class="purchase-button">
+          PURCHASE NOW
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ROW 5: YEARLY BOY -->
+
+    <section class="detail-row">
+
+      <div class="detail-image">
+
+        <img
+          src="Service3Detail.jpg"
+          alt="Yearly Boy edition details"
+          onerror="this.style.display='none'"
+        >
+
+        <span class="detail-placeholder">
+          SERVICE 3 DETAIL IMAGE
+        </span>
+
+      </div>
+
+      <div class="detail-copy">
+
+        <h2 id="yearly-boy">Yearly Boy</h2>
+
+        <div class="detail-price">
+          $164.99 / year
+        </div>
+
+        <p>
+          Enjoy twelve monthly Boy editions with one annual
+          subscription. Save $27.01 compared with twelve
+          separate $16 monthly payments.
+        </p>
+
+        <a href="contact.html" class="purchase-button">
+          PURCHASE NOW
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ROW 6: YEARLY BOY AND GIRL -->
+
+    <section class="detail-row reverse">
+
+      <div class="detail-image">
+
+        <img
+          src="Service4Detail.jpg"
+          alt="Yearly Boy and Girl edition details"
+          onerror="this.style.display='none'"
+        >
+
+        <span class="detail-placeholder">
+          SERVICE 4 DETAIL IMAGE
+        </span>
+
+      </div>
+
+      <div class="detail-copy">
+
+        <h2 id="yearly-both">Yearly Boy &amp; Girl</h2>
+
+        <div class="detail-price">
+          $299.99 / year
+        </div>
+
+        <p>
+          Enjoy both Boy and Girl editions throughout
+          the year. Save $84.01 compared with purchasing
+          both editions separately each month.
+        </p>
+
+        <a href="contact.html" class="purchase-button">
+          PURCHASE NOW
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ROW 7: YEARLY GIRL -->
+
+    <section class="detail-row">
+
+      <div class="detail-image">
+
+        <img
+          src="Service5Detail.jpg"
+          alt="Yearly Girl edition details"
+          onerror="this.style.display='none'"
+        >
+
+        <span class="detail-placeholder">
+          SERVICE 5 DETAIL IMAGE
+        </span>
+
+      </div>
+
+      <div class="detail-copy">
+
+        <h2 id="yearly-girl">Yearly Girl</h2>
+
+        <div class="detail-price">
+          $164.99 / year
+        </div>
+
+        <p>
+          Enjoy twelve monthly Girl editions with one
+          annual subscription. Save $27.01 compared
+          with twelve separate $16 monthly payments.
+        </p>
+
+        <a href="contact.html" class="purchase-button">
+          PURCHASE NOW
+        </a>
+
+      </div>
+
+    </section>
+
+  </div>
+
 </main>
-<footer><div class="social-links"><a href="https://facebook.com/" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i><span>Facebook</span></a><a href="https://instagram.com/" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram</span></a><a href="https://tiktok.com/" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i><span>TikTok</span></a></div><p class="copyright">&copy; 2026 Gabriel Venegas. All rights reserved.</p></footer>
+
+<!-- ========================================
+     SHARED FOOTER
+     ======================================== -->
+
+<footer>
+
+  <div class="social-links">
+
+    <a href="https://facebook.com/" aria-label="Facebook">
+      <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+      <span>Facebook</span>
+    </a>
+
+    <a href="https://instagram.com/" aria-label="Instagram">
+      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      <span>Instagram</span>
+    </a>
+
+    <a href="https://tiktok.com/" aria-label="TikTok">
+      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+      <span>TikTok</span>
+    </a>
+
+  </div>
+
+  <p class="copyright">
+    &copy; 2026 Gabriel Venegas. All rights reserved.
+  </p>
+
+</footer>
+
+<!-- SHARED SCROLL EFFECTS -->
 <script src="scroll-effects.js" defer></script>
+
+<!-- ========================================
+     SMOOTH SCROLL TO DETAIL HEADINGS
+     ======================================== -->
+
+<script>
+
+document.querySelectorAll('.pod-button[href^="#"]')
+  .forEach(link => {
+
+    link.addEventListener('click', event => {
+
+      const heading = document.querySelector(
+        link.getAttribute('href')
+      );
+
+      if (!heading) return;
+
+      event.preventDefault();
+
+      const header = document.querySelector('header');
+
+      const offset = (
+        header ? header.getBoundingClientRect().height : 0
+      ) + 20;
+
+      const destination =
+        heading.getBoundingClientRect().top
+        + window.scrollY
+        - offset;
+
+      const reducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+      window.scrollTo({
+        top: Math.max(0, destination),
+        behavior: reducedMotion ? 'auto' : 'smooth'
+      });
+
+      history.replaceState(
+        null,
+        '',
+        link.getAttribute('href')
+      );
+
+    });
+
+  });
+
+</script>
+
 </body>
 </html>
