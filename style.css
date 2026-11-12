@@ -94,3 +94,779 @@ header {
 
 .logo img {
   width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+/* CENTERED TITLE */
+
+.header-title {
+  text-align: center;
+  max-width: 70%;
+}
+
+.header-title h1 {
+  font-size: 32px;
+  font-weight: normal;
+  letter-spacing: 4px;
+  line-height: 1.3;
+}
+
+.header-title p {
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+/* SECOND NAVIGATION ROW */
+
+.navigation {
+  height: 40px;
+  background-color: var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  border-top: 1px solid #C8A989;
+  border-bottom: 1px solid #C8A989;
+}
+
+.navigation a {
+  color: var(--brown);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: var(--light-brown);
+  text-decoration: underline;
+}
+
+/* ========================================
+   MAIN HOMEPAGE
+   ======================================== */
+
+main {
+  flex: 1;
+  width: 100%;
+  background-color: var(--white);
+}
+
+main section {
+  scroll-margin-top: 220px;
+}
+
+.home-container,
+.homepage,
+.home-content {
+  width: min(100% - 48px, var(--content-width));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-container {
+  padding-top: 55px;
+  padding-bottom: 80px;
+}
+
+.home-section {
+  margin-bottom: var(--section-space);
+}
+
+/* ========================================
+   BLACK ROUNDED IMAGE FRAMES
+   ======================================== */
+
+.image-frame,
+.photo-frame,
+.video-frame {
+  background-color: var(--black);
+  border: 8px solid var(--black);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image-frame img,
+.photo-frame img,
+.video-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* IMAGE PLACEHOLDERS */
+
+.image-placeholder,
+.video-placeholder {
+  background-color: var(--gray);
+  color: #555555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 12px;
+}
+
+/* ========================================
+   FIRST ROW - LARGE HORIZONTAL IMAGE
+   ======================================== */
+
+.hero,
+.hero-section,
+.featured-image {
+  width: 100%;
+  margin-bottom: var(--section-space);
+}
+
+.hero .image-frame,
+.hero-section .image-frame,
+.featured-image .image-frame {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  max-height: 540px;
+}
+
+/* ========================================
+   SECOND ROW - INTRO AND VLOG
+   ======================================== */
+
+.intro-section,
+.intro-row,
+.vlog-section {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(0, 0.8fr);
+  align-items: center;
+  gap: 55px;
+  margin-bottom: var(--section-space);
+}
+
+.intro-text,
+.vlog-text {
+  min-width: 0;
+}
+
+.intro-text h2,
+.vlog-text h2 {
+  font-size: clamp(23px, 3vw, 36px);
+  font-weight: normal;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.intro-text p,
+.vlog-text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text-gray);
+}
+
+.intro-section .video-frame,
+.intro-row .video-frame,
+.vlog-section .video-frame {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 3 / 4;
+  justify-self: center;
+}
+
+/* ========================================
+   THIRD ROW - THREE IMAGE COLUMNS
+   ======================================== */
+
+.cards-section,
+.gallery-preview,
+.features-section {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.cards-grid,
+.three-columns,
+.feature-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.card,
+.feature-card,
+.gallery-card {
+  min-width: 0;
+  text-align: center;
+}
+
+.card .image-frame,
+.feature-card .image-frame,
+.gallery-card .image-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 22px;
+}
+
+.card h3,
+.feature-card h3,
+.gallery-card h3 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+.card p,
+.feature-card p,
+.gallery-card p {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.7;
+  max-width: 290px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   CLICK NOW BUTTON
+   ======================================== */
+
+.button-row,
+.button-container,
+.cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+  margin-bottom: 70px;
+}
+
+.click-button,
+.cta-button,
+.button-row a,
+.button-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 46px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--brown);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.click-button:hover,
+.cta-button:hover,
+.button-row a:hover,
+.button-container a:hover {
+  background-color: var(--light-brown);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   FIXED FOOTER
+   ALWAYS VISIBLE
+   ======================================== */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background-color: var(--brown);
+  color: #FFF7E8;
+
+  min-height: var(--footer-height);
+  padding: 12px 20px 10px;
+  text-align: center;
+
+  box-shadow: 0 -3px 12px rgba(0,0,0,0.12);
+}
+
+/* SOCIAL MEDIA */
+
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto 9px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFF7E8;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links i {
+  font-size: 25px;
+}
+
+.social-links a:hover {
+  color: var(--sand);
+}
+
+/* COPYRIGHT */
+
+.copyright {
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1.7;
+  border-top: 1px solid #94745D;
+  padding-top: 8px;
+}
+
+/* ========================================
+   TABLETS AND SMALL LAPTOPS
+   601px TO 1024px
+   ======================================== */
+
+@media (max-width: 1024px) {
+
+  :root {
+    --section-space: 60px;
+  }
+
+  .header-top {
+    height: 140px;
+    padding: 20px 25px;
+  }
+
+  .logo {
+    left: 25px;
+  }
+
+  .logo img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .header-title h1 {
+    font-size: 26px;
+    letter-spacing: 3px;
+  }
+
+  .navigation {
+    height: 35px;
+    gap: 25px;
+  }
+
+  .navigation a {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .home-container {
+    padding-top: 40px;
+  }
+
+  .intro-section,
+  .intro-row,
+  .vlog-section {
+    gap: 35px;
+  }
+
+  .cards-grid,
+  .three-columns,
+  .feature-grid {
+    gap: 22px;
+  }
+
+  .card h3,
+  .feature-card h3,
+  .gallery-card h3 {
+    font-size: 18px;
+  }
+
+  html {
+    scroll-padding-top: 195px;
+  }
+
+  main section {
+    scroll-margin-top: 195px;
+  }
+}
+
+/* ========================================
+   PHONES
+   600px AND BELOW
+   ======================================== */
+
+@media (max-width: 600px) {
+
+  :root {
+    --section-space: 38px;
+    --footer-height: 80px;
+  }
+
+  .header-top {
+    height: 86px;
+    padding: 12px;
+  }
+
+  .logo {
+    left: 12px;
+  }
+
+  .logo img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .header-title {
+    max-width: none;
+    width: 100%;
+    padding-left: 65px;
+    padding-right: 5px;
+  }
+
+  .header-title h1 {
+    font-size: clamp(15px, 4vw, 20px);
+    letter-spacing: 1.5px;
+  }
+
+  .header-title p {
+    font-size: 10px;
+    margin-top: 6px;
+    letter-spacing: 0;
+  }
+
+  .navigation {
+    height: auto;
+    min-height: 40px;
+    flex-wrap: wrap;
+    gap: 7px 11px;
+    padding: 7px 5px;
+  }
+
+  .navigation a {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .home-container,
+  .homepage,
+  .home-content {
+    width: calc(100% - 28px);
+  }
+
+  .home-container {
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .image-frame,
+  .photo-frame,
+  .video-frame {
+    border-width: 5px;
+    border-radius: 14px;
+  }
+
+  .image-placeholder,
+  .video-placeholder {
+    font-size: 12px;
+    border-radius: 9px;
+  }
+
+  .hero .image-frame,
+  .hero-section .image-frame,
+  .featured-image .image-frame {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* INTRO BESIDE VIDEO */
+
+  .intro-section,
+  .intro-row,
+  .vlog-section {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 0.85fr);
+    gap: 16px;
+  }
+
+  .intro-text h2,
+  .vlog-text h2 {
+    font-size: clamp(16px, 4vw, 23px);
+    margin-bottom: 10px;
+  }
+
+  .intro-text p,
+  .vlog-text p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .intro-section .video-frame,
+  .intro-row .video-frame,
+  .vlog-section .video-frame {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* THREE CARDS STAY SIDE BY SIDE */
+
+  .cards-grid,
+  .three-columns,
+  .feature-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .card .image-frame,
+  .feature-card .image-frame,
+  .gallery-card .image-frame {
+    margin-bottom: 12px;
+  }
+
+  .card h3,
+  .feature-card h3,
+  .gallery-card h3 {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 7px;
+  }
+
+  .card p,
+  .feature-card p,
+  .gallery-card p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  /* BUTTON */
+
+  .button-row,
+  .button-container,
+  .cta-section {
+    margin-top: 32px;
+    margin-bottom: 45px;
+  }
+
+  .click-button,
+  .cta-button,
+  .button-row a,
+  .button-container a {
+    min-width: 145px;
+    min-height: 42px;
+    font-size: 11px;
+  }
+
+  /* COMPACT FIXED FOOTER */
+
+  footer {
+    padding: 9px 10px 7px;
+  }
+
+  .social-links {
+    flex-wrap: nowrap;
+    gap: 5px;
+    margin-bottom: 7px;
+  }
+
+  .social-links a {
+    flex-direction: column;
+    gap: 3px;
+    font-size: 10px;
+  }
+
+  .social-links i {
+    font-size: 20px;
+  }
+
+  .copyright {
+    font-size: 9px;
+    padding-top: 6px;
+  }
+
+  html {
+    scroll-padding-top: 150px;
+  }
+
+  main section {
+    scroll-margin-top: 150px;
+  }
+}
+
+/* ========================================
+   VERY SMALL PHONES
+   360px AND BELOW
+   ======================================== */
+
+@media (max-width: 360px) {
+
+  .header-title h1 {
+    font-size: 14px;
+  }
+
+  .navigation {
+    gap: 8px 12px;
+  }
+
+  .navigation a {
+    font-size: 9px;
+  }
+
+  .intro-section,
+  .intro-row,
+  .vlog-section {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .intro-section .video-frame,
+  .intro-row .video-frame,
+  .vlog-section .video-frame {
+    max-width: 230px;
+  }
+
+  .cards-grid,
+  .three-columns,
+  .feature-grid {
+    gap: 7px;
+  }
+
+  .card h3,
+  .feature-card h3,
+  .gallery-card h3 {
+    font-size: 11px;
+  }
+
+  .card p,
+  .feature-card p,
+  .gallery-card p {
+    font-size: 9px;
+  }
+}
+
+/* ========================================
+   SHORT LANDSCAPE SCREENS
+   ======================================== */
+
+@media (max-height: 550px)
+       and (max-width: 900px) {
+
+  :root {
+    --footer-height: 58px;
+  }
+
+  .header-top {
+    height: 65px;
+  }
+
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  footer {
+    padding: 5px 10px;
+  }
+
+  footer .copyright {
+    display: none;
+  }
+
+  .social-links {
+    margin-bottom: 0;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+/* ========================================
+   SCROLL-AWARE HEADER AND FOOTER
+   Add scroll-effects.js to your HTML.
+   ======================================== */
+:root { --footer-reserved: var(--footer-height); }
+body { padding-bottom: calc(var(--footer-reserved) + env(safe-area-inset-bottom, 0px)); }
+header { transition: box-shadow .25s ease; }
+.header-top, .logo img, .header-title h1, .header-title p,
+.navigation, footer, .social-links, .social-links i, .copyright {
+  transition: height .28s ease, min-height .28s ease, padding .28s ease,
+    font-size .28s ease, margin .28s ease, gap .28s ease,
+    width .28s ease, opacity .28s ease;
+}
+/* Scrolled: preserve the navigation links, title and logo. */
+body:not(.at-page-top) .header-top { height: 92px; padding-top: 10px; padding-bottom: 10px; }
+body:not(.at-page-top) .logo img { width: 66px; height: 66px; }
+body:not(.at-page-top) .header-title h1 { font-size: 24px; }
+body:not(.at-page-top) .header-title p { font-size: 12px; margin-top: 4px; }
+body:not(.at-page-top) .navigation { height: 36px; }
+/* Compact footer everywhere except the bottom. */
+body:not(.at-page-bottom) footer { min-height: 0; padding: 7px 20px 6px; }
+body:not(.at-page-bottom) .social-links { margin-bottom: 4px; gap: 18px; }
+body:not(.at-page-bottom) .social-links a { font-size: 13px; }
+body:not(.at-page-bottom) .social-links i { font-size: 20px; }
+body:not(.at-page-bottom) .copyright { font-size: 11px; padding-top: 4px; line-height: 1.35; }
+/* Give content space so the fixed footer never covers the last section. */
+body { --footer-reserved: 112px; }
+@media (max-width: 1024px) {
+  body:not(.at-page-top) .header-top { height: 84px; }
+  body:not(.at-page-top) .logo img { width: 60px; height: 60px; }
+  body:not(.at-page-top) .header-title h1 { font-size: 22px; }
+}
+@media (max-width: 600px) {
+  body { --footer-reserved: 90px; }
+  body:not(.at-page-top) .header-top { height: 68px; padding: 8px 12px; }
+  body:not(.at-page-top) .logo img { width: 38px; height: 38px; }
+  body:not(.at-page-top) .header-title h1 { font-size: clamp(14px, 3.5vw, 18px); }
+  body:not(.at-page-top) .header-title p { font-size: 10px; margin-top: 3px; }
+  body:not(.at-page-top) .navigation { height: auto; min-height: 36px; padding: 5px; gap: 6px 10px; }
+  body:not(.at-page-bottom) footer { padding: 6px 9px 5px; }
+  body:not(.at-page-bottom) .social-links { gap: 5px; margin-bottom: 4px; }
+  body:not(.at-page-bottom) .social-links a { font-size: 10px; gap: 2px; }
+  body:not(.at-page-bottom) .social-links i { font-size: 18px; }
+  body:not(.at-page-bottom) .copyright { font-size: 9px; padding-top: 4px; }
+}
+@media (max-height: 550px) and (max-width: 900px) {
+  body:not(.at-page-top) .header-top { height: 55px; }
+  body:not(.at-page-top) .logo img { width: 36px; height: 36px; }
+  body { --footer-reserved: 65px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header-top, .logo img, .header-title h1, .header-title p,
+  .navigation, footer, .social-links, .social-links i, .copyright { transition: none; }
+}
